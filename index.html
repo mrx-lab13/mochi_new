@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>望月勇気 | Financial Design</title>
 
 <style>
+
+/* =========================
+RESET
+========================= */
 
 *{
 margin:0;
@@ -19,8 +23,8 @@ box-sizing:border-box;
 --gold:#c6a96a;
 --text:#1e293b;
 --sub:#64748b;
---bg:#f8fafc;
 --line:#e2e8f0;
+--bg:#f8fafc;
 }
 
 html{
@@ -35,7 +39,7 @@ BlinkMacSystemFont,
 "Noto Sans JP",
 sans-serif;
 
-background:#fff;
+background:#ffffff;
 color:var(--text);
 
 overflow-x:hidden;
@@ -58,7 +62,7 @@ margin:auto;
 }
 
 section{
-padding:120px 0;
+padding:140px 0;
 }
 
 /* =========================
@@ -66,9 +70,11 @@ HEADER
 ========================= */
 
 header{
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 
 z-index:1000;
@@ -83,6 +89,7 @@ border-bottom:
 }
 
 .header-inner{
+
 height:86px;
 
 display:flex;
@@ -91,22 +98,27 @@ justify-content:space-between;
 }
 
 .logo{
+
 font-size:22px;
 font-weight:700;
+
 letter-spacing:.08em;
+
 color:var(--navy);
 }
 
 nav ul{
+
 display:flex;
 gap:42px;
+
 list-style:none;
 }
 
 nav a{
+
 font-size:13px;
 letter-spacing:.08em;
-color:var(--navy);
 
 transition:.3s;
 }
@@ -116,7 +128,13 @@ opacity:.5;
 }
 
 .header-btn{
-padding:14px 24px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+height:52px;
+padding:0 28px;
 
 border-radius:999px;
 
@@ -133,7 +151,8 @@ HERO
 ========================= */
 
 .hero{
-padding-top:140px;
+
+padding-top:150px;
 padding-bottom:90px;
 
 background:
@@ -145,31 +164,41 @@ linear-gradient(
 }
 
 .hero-grid{
+
 display:grid;
-grid-template-columns:42% 58%;
+
+grid-template-columns:
+42% 58%;
+
+gap:70px;
+
 align-items:center;
 }
 
 .hero-left{
-padding-right:60px;
+padding-right:20px;
 }
 
 .hero-sub{
+
 font-size:13px;
 letter-spacing:.28em;
+
 color:var(--gold);
 
 margin-bottom:26px;
 }
 
 .hero h1{
+
 font-size:88px;
-line-height:1.18;
+line-height:1.12;
+
 font-weight:700;
 
 color:var(--navy);
 
-margin-bottom:36px;
+margin-bottom:38px;
 }
 
 .hero h1 span{
@@ -177,76 +206,78 @@ color:var(--gold);
 }
 
 .hero-text{
+
 font-size:18px;
 line-height:2.1;
 
 color:var(--sub);
 
-margin-bottom:46px;
+margin-bottom:52px;
 }
 
 .hero-profile{
-margin-bottom:42px;
+
+padding-top:8px;
 }
 
 .hero-en{
-font-size:14px;
 
-letter-spacing:.38em;
+font-size:14px;
+letter-spacing:.42em;
 
 color:var(--gold);
-
-margin-bottom:16px;
-}
-
-.hero-name-row{
-display:flex;
-align-items:end;
-gap:28px;
 
 margin-bottom:18px;
 }
 
 .hero-name{
-font-size:68px;
+
+font-size:74px;
 line-height:1;
+
 font-weight:700;
+
 color:var(--navy);
+
+margin-bottom:22px;
 }
 
 .hero-job{
+
 font-size:15px;
-line-height:1.9;
+line-height:2;
+
 color:var(--sub);
-padding-bottom:10px;
+
+margin-bottom:32px;
 }
 
 .hero-badges{
+
 display:flex;
 gap:14px;
 flex-wrap:wrap;
 }
 
 .hero-badge{
+
 padding:12px 18px;
 
 border-radius:999px;
 
-border:1px solid rgba(198,169,106,.35);
+border:
+1px solid rgba(198,169,106,.3);
+
+background:
+rgba(198,169,106,.06);
 
 font-size:13px;
 
 color:var(--gold);
-
-background:
-rgba(198,169,106,.05);
-}
-
-.hero-image{
-position:relative;
 }
 
 .hero-image img{
+
 height:860px;
 
 object-fit:cover;
@@ -262,11 +293,12 @@ SECTION HEAD
 ========================= */
 
 .section-head{
-text-align:center;
+
 margin-bottom:74px;
 }
 
 .section-head span{
+
 display:block;
 
 font-size:13px;
@@ -274,12 +306,13 @@ letter-spacing:.28em;
 
 color:var(--gold);
 
-margin-bottom:14px;
+margin-bottom:16px;
 }
 
 .section-head h2{
+
 font-size:58px;
-line-height:1.4;
+line-height:1.35;
 
 color:var(--navy);
 }
@@ -289,29 +322,33 @@ SERVICE
 ========================= */
 
 .service-layout{
+
 display:grid;
-grid-template-columns:1.2fr 1fr 1fr;
-grid-template-rows:260px 260px;
+
+grid-template-columns:
+1.2fr 1fr 1fr;
+
+grid-template-rows:
+260px 260px;
+
 gap:22px;
 }
 
 .service-card{
-position:relative;
 
 background:#fff;
 
 border-radius:34px;
 
-padding:38px;
+padding:40px;
 
-border:1px solid rgba(15,23,42,.05);
-
-overflow:hidden;
-
-transition:.35s;
+border:
+1px solid rgba(15,23,42,.05);
 
 box-shadow:
 0 10px 40px rgba(15,23,42,.04);
+
+transition:.35s;
 }
 
 .service-card:hover{
@@ -322,57 +359,31 @@ transform:translateY(-8px);
 grid-row:1 / 3;
 }
 
-.service-card::after{
-content:"";
+.service-no{
 
-position:absolute;
-right:-60px;
-bottom:-60px;
+font-size:78px;
+line-height:1;
 
-width:180px;
-height:180px;
+font-weight:700;
 
-background:
-radial-gradient(
-rgba(198,169,106,.10),
-transparent 70%
-);
-}
+color:
+rgba(198,169,106,.18);
 
-.service-icon{
-width:72px;
-height:72px;
-
-border-radius:22px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border:1px solid var(--line);
-
-margin-bottom:28px;
-}
-
-.service-icon svg{
-width:34px;
-height:34px;
-
-stroke:var(--gold);
-stroke-width:1.7;
-fill:none;
+margin-bottom:24px;
 }
 
 .service-card h3{
+
 font-size:34px;
 line-height:1.4;
 
-margin-bottom:18px;
-
 color:var(--navy);
+
+margin-bottom:18px;
 }
 
 .service-card p{
+
 font-size:16px;
 line-height:2;
 
@@ -384,6 +395,7 @@ CHECK
 ========================= */
 
 .check{
+
 background:var(--navy);
 
 position:relative;
@@ -392,31 +404,35 @@ overflow:hidden;
 }
 
 .check::before{
-content:"check";
+
+content:"CHECK";
 
 position:absolute;
-right:80px;
-bottom:30px;
 
-font-size:120px;
+right:60px;
+bottom:-10px;
 
-font-style:italic;
+font-size:180px;
+font-weight:700;
 
-color:rgba(255,255,255,.05);
+color:
+rgba(255,255,255,.03);
 }
 
 .check-grid{
+
 display:grid;
-grid-template-columns:38% 62%;
-gap:54px;
+
+grid-template-columns:
+38% 62%;
+
+gap:60px;
+
 align-items:center;
 }
 
-.check-left{
-color:#fff;
-}
-
 .check-left span{
+
 display:block;
 
 font-size:13px;
@@ -428,25 +444,34 @@ margin-bottom:16px;
 }
 
 .check-left h2{
-font-size:62px;
-line-height:1.35;
+
+font-size:68px;
+line-height:1.28;
+
+color:#fff;
 
 margin-bottom:28px;
 }
 
 .check-left p{
+
 font-size:16px;
-line-height:2;
+line-height:2.1;
 
-color:rgba(255,255,255,.7);
+color:
+rgba(255,255,255,.72);
 
-margin-bottom:40px;
+margin-bottom:42px;
 }
 
 .check-btn{
-display:inline-flex;
 
-padding:18px 34px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+width:260px;
+height:64px;
 
 border-radius:999px;
 
@@ -458,9 +483,10 @@ font-weight:700;
 }
 
 .quiz-card{
+
 background:#fff;
 
-border-radius:32px;
+border-radius:34px;
 
 padding:44px;
 
@@ -469,31 +495,37 @@ box-shadow:
 }
 
 .quiz-top{
+
 display:flex;
 align-items:center;
-gap:16px;
+gap:18px;
 
 margin-bottom:34px;
 }
 
 .quiz-no{
+
 font-size:15px;
 font-weight:700;
+
 color:var(--gold);
 }
 
 .progress{
+
 flex:1;
+
 height:6px;
 
-border-radius:999px;
-
 background:#e5e7eb;
+
+border-radius:999px;
 
 overflow:hidden;
 }
 
 .progress-bar{
+
 width:10%;
 height:100%;
 
@@ -501,24 +533,32 @@ background:var(--gold);
 }
 
 .quiz-question{
-font-size:42px;
-line-height:1.5;
+
+font-size:44px;
+line-height:1.45;
+
+text-align:center;
 
 font-weight:700;
 
-text-align:center;
+color:var(--navy);
 
 margin-bottom:42px;
 }
 
 .answer-grid{
+
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:16px;
 }
 
 .answer-btn{
-padding:22px;
+
+height:72px;
 
 border-radius:999px;
 
@@ -531,10 +571,15 @@ font-size:16px;
 cursor:pointer;
 
 transition:.3s;
+
+-webkit-appearance:none;
+appearance:none;
 }
 
 .answer-btn:hover{
+
 border-color:var(--gold);
+
 transform:translateY(-2px);
 }
 
@@ -542,91 +587,65 @@ transform:translateY(-2px);
 FLOW
 ========================= */
 
-.flow-row{
+.flow-section{
+background:#fff;
+}
+
+.flow-grid{
+
 display:grid;
-grid-template-columns:repeat(5,1fr);
+
+grid-template-columns:
+repeat(5,1fr);
+
+gap:34px;
+
 align-items:start;
-gap:20px;
 }
 
 .flow-card{
-text-align:center;
 position:relative;
 }
 
-.flow-card:not(:last-child)::after{
-content:"›";
-
-position:absolute;
-top:48px;
-right:-14px;
-
-font-size:40px;
-
-font-weight:300;
-
-color:#cbd5e1;
-}
-
 .flow-no{
-width:34px;
-height:34px;
 
-border-radius:50%;
+font-size:78px;
+line-height:1;
 
-background:var(--gold);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-margin:auto;
-margin-bottom:20px;
-
-font-size:12px;
 font-weight:700;
 
-color:#fff;
+color:
+rgba(198,169,106,.22);
+
+margin-bottom:24px;
 }
 
-.flow-circle{
-width:110px;
-height:110px;
+.flow-line{
 
-border-radius:50%;
+width:100%;
+height:1px;
 
-border:1px solid var(--line);
+background:#e2e8f0;
 
-display:flex;
-align-items:center;
-justify-content:center;
-
-margin:auto;
-margin-bottom:26px;
-}
-
-.flow-circle svg{
-width:38px;
-height:38px;
-
-stroke:var(--gold);
-stroke-width:1.7;
-fill:none;
+margin-bottom:30px;
 }
 
 .flow-card h3{
+
 font-size:28px;
+line-height:1.5;
 
-margin-bottom:16px;
+color:#0f172a;
 
-color:var(--navy);
+margin-bottom:18px;
 }
 
 .flow-card p{
-font-size:15px;
-line-height:2;
 
-color:var(--sub);
+font-size:15px;
+line-height:2.1;
+
+color:#64748b;
 }
 
 /* =========================
@@ -638,17 +657,23 @@ padding:0;
 }
 
 .result-wrap{
+
 background:var(--navy);
 
-padding:60px 80px;
+padding:70px 80px;
 
 display:grid;
-grid-template-columns:1.4fr repeat(4,1fr);
+
+grid-template-columns:
+1.5fr repeat(4,1fr);
+
+gap:20px;
 
 align-items:center;
 }
 
 .result-title span{
+
 display:block;
 
 font-size:13px;
@@ -660,20 +685,24 @@ margin-bottom:14px;
 }
 
 .result-title h2{
-font-size:54px;
-line-height:1.4;
+
+font-size:58px;
+line-height:1.35;
 
 color:#fff;
 }
 
 .result-item{
+
 text-align:center;
+
 border-left:
-1px solid rgba(255,255,255,.1);
+1px solid rgba(255,255,255,.08);
 }
 
 .result-item h3{
-font-size:82px;
+
+font-size:88px;
 line-height:1;
 
 color:var(--gold);
@@ -682,9 +711,11 @@ margin-bottom:14px;
 }
 
 .result-item p{
+
 font-size:15px;
 
-color:rgba(255,255,255,.72);
+color:
+rgba(255,255,255,.72);
 }
 
 /* =========================
@@ -692,13 +723,16 @@ SNS
 ========================= */
 
 .sns-row{
+
 display:flex;
 justify-content:center;
-gap:26px;
+gap:28px;
+
 flex-wrap:wrap;
 }
 
 .sns-card{
+
 width:140px;
 height:140px;
 
@@ -706,11 +740,11 @@ border-radius:30px;
 
 background:#fff;
 
+border:1px solid var(--line);
+
 display:flex;
 align-items:center;
 justify-content:center;
-
-border:1px solid var(--line);
 
 box-shadow:
 0 10px 40px rgba(15,23,42,.04);
@@ -723,8 +757,10 @@ transform:translateY(-8px);
 }
 
 .sns-card img{
-width:60px;
-height:60px;
+
+width:56px;
+height:56px;
+
 object-fit:contain;
 }
 
@@ -733,6 +769,7 @@ CTA
 ========================= */
 
 .cta{
+
 background:
 linear-gradient(
 135deg,
@@ -744,38 +781,74 @@ color:#fff;
 }
 
 .cta-grid{
+
 display:grid;
-grid-template-columns:1fr auto;
+
+grid-template-columns:
+1fr auto;
+
 gap:80px;
+
 align-items:center;
 }
 
 .cta h2{
-font-size:72px;
-line-height:1.35;
+
+font-size:76px;
+line-height:1.25;
 }
 
 .cta-right p{
+
 font-size:17px;
 line-height:2;
 
-color:rgba(255,255,255,.72);
+color:
+rgba(255,255,255,.72);
 
-margin-bottom:34px;
+margin-bottom:36px;
 }
 
 .cta-buttons{
+
 display:flex;
 flex-direction:column;
 gap:18px;
 }
 
+.cta-buttons .btn{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+width:340px;
+height:68px;
+
+border-radius:999px;
+
+font-size:16px;
+font-weight:700;
+
+overflow:hidden;
+
+-webkit-appearance:none;
+appearance:none;
+
+flex-shrink:0;
+}
+
 .btn-gold{
+
 background:var(--gold);
+
+color:#fff;
 }
 
 .btn-white{
+
 background:#fff;
+
 color:var(--navy);
 }
 
@@ -784,6 +857,7 @@ FOOTER
 ========================= */
 
 footer{
+
 background:#050b15;
 
 padding:28px;
@@ -792,7 +866,8 @@ text-align:center;
 
 font-size:13px;
 
-color:rgba(255,255,255,.45);
+color:
+rgba(255,255,255,.45);
 }
 
 /* =========================
@@ -804,6 +879,7 @@ RESPONSIVE
 .hero-grid,
 .check-grid,
 .cta-grid{
+
 grid-template-columns:1fr;
 }
 
@@ -812,24 +888,23 @@ height:auto;
 }
 
 .service-layout{
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
+grid-template-rows:auto;
 }
 
 .service-large{
 grid-row:auto;
 }
 
+.flow-grid{
+grid-template-columns:1fr 1fr;
+}
+
 .result-wrap{
 grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-.flow-row{
-grid-template-columns:1fr 1fr;
-}
-
-.flow-card::after{
-display:none;
 }
 
 }
@@ -837,7 +912,7 @@ display:none;
 @media(max-width:768px){
 
 section{
-padding:80px 0;
+padding:90px 0;
 }
 
 nav,
@@ -850,6 +925,7 @@ height:76px;
 }
 
 .hero{
+
 padding-top:120px;
 padding-bottom:70px;
 }
@@ -858,25 +934,25 @@ padding-bottom:70px;
 gap:50px;
 }
 
-.hero-left{
-padding-right:0;
-}
-
 .hero h1{
-font-size:52px;
+
+font-size:54px;
+line-height:1.18;
 }
 
 .hero-text{
-font-size:16px;
-}
 
-.hero-name-row{
-display:block;
+font-size:16px;
+line-height:2;
 }
 
 .hero-name{
-font-size:52px;
-margin-bottom:12px;
+
+font-size:54px;
+}
+
+.hero-job{
+font-size:14px;
 }
 
 .hero-image img{
@@ -884,20 +960,36 @@ border-radius:28px;
 }
 
 .section-head{
-margin-bottom:48px;
+margin-bottom:52px;
 }
 
 .section-head h2{
-font-size:38px;
+
+font-size:40px;
+line-height:1.4;
 }
 
 .service-layout{
+
 grid-template-columns:1fr;
-grid-template-rows:auto;
 }
 
 .service-card{
-padding:34px 30px;
+padding:34px 28px;
+}
+
+.service-no{
+font-size:58px;
+}
+
+.service-card h3{
+font-size:30px;
+}
+
+.service-card p{
+
+font-size:17px;
+line-height:2;
 }
 
 .check-grid{
@@ -905,34 +997,64 @@ gap:40px;
 }
 
 .check-left h2{
+
 font-size:42px;
+line-height:1.35;
+
+word-break:keep-all;
 }
 
 .quiz-card{
+
 padding:30px 22px;
 }
 
 .quiz-question{
+
 font-size:30px;
+line-height:1.45;
 }
 
 .answer-grid{
 grid-template-columns:1fr;
 }
 
-.flow-row{
+.answer-btn{
+height:66px;
+}
+
+.flow-grid{
+
 grid-template-columns:1fr;
-gap:40px;
+
+gap:54px;
+}
+
+.flow-no{
+font-size:56px;
+}
+
+.flow-card h3{
+font-size:30px;
+}
+
+.flow-card p{
+
+font-size:17px;
+line-height:2;
 }
 
 .result-wrap{
+
 padding:50px 30px;
+
 grid-template-columns:1fr;
+
+gap:44px;
 }
 
 .result-title h2{
 font-size:40px;
-margin-bottom:24px;
 }
 
 .result-item{
@@ -940,26 +1062,37 @@ border:none;
 }
 
 .result-item h3{
-font-size:64px;
+font-size:68px;
 }
 
 .sns-card{
+
 width:96px;
 height:96px;
+
 border-radius:24px;
 }
 
 .sns-card img{
-width:44px;
-height:44px;
+
+width:42px;
+height:42px;
 }
 
 .cta-grid{
-gap:40px;
+gap:44px;
 }
 
 .cta h2{
-font-size:42px;
+
+font-size:46px;
+line-height:1.35;
+}
+
+.cta-buttons .btn{
+
+width:100%;
+height:64px;
 }
 
 }
@@ -978,17 +1111,21 @@ YUKI MOCHIZUKI
 </div>
 
 <nav>
+
 <ul>
+
 <li><a href="#">SERVICE</a></li>
 <li><a href="#">CHECK</a></li>
 <li><a href="#">FLOW</a></li>
 <li><a href="#">RESULTS</a></li>
 <li><a href="#">CONTACT</a></li>
+
 </ul>
+
 </nav>
 
 <a href="#" class="header-btn">
-無料相談を予約する
+無料相談
 </a>
 
 </div>
@@ -1025,17 +1162,12 @@ FINANCIAL DESIGN FOR LIFE
 YUKI MOCHIZUKI
 </div>
 
-<div class="hero-name-row">
-
 <div class="hero-name">
 望月 勇気
 </div>
 
 <div class="hero-job">
-Financial Planner<br>
-FP2級 / 証券外務員二種
-</div>
-
+Financial Planner / FP2級 / 証券外務員二種
 </div>
 
 </div>
@@ -1082,13 +1214,8 @@ FP2級 / 証券外務員二種
 
 <div class="service-card service-large">
 
-<div class="service-icon">
-
-<svg viewBox="0 0 24 24">
-<path d="M3 10.5L12 3l9 7.5"/>
-<path d="M5 10v10h14V10"/>
-</svg>
-
+<div class="service-no">
+01
 </div>
 
 <h3>
@@ -1104,12 +1231,8 @@ FP2級 / 証券外務員二種
 
 <div class="service-card">
 
-<div class="service-icon">
-
-<svg viewBox="0 0 24 24">
-<path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/>
-</svg>
-
+<div class="service-no">
+02
 </div>
 
 <h3>
@@ -1125,13 +1248,8 @@ FP2級 / 証券外務員二種
 
 <div class="service-card">
 
-<div class="service-icon">
-
-<svg viewBox="0 0 24 24">
-<path d="M4 19h16"/>
-<path d="M7 15l4-4 3 3 5-6"/>
-</svg>
-
+<div class="service-no">
+03
 </div>
 
 <h3>
@@ -1147,13 +1265,8 @@ FP2級 / 証券外務員二種
 
 <div class="service-card">
 
-<div class="service-icon">
-
-<svg viewBox="0 0 24 24">
-<path d="M4 5h7v14H4z"/>
-<path d="M13 5h7v14h-7z"/>
-</svg>
-
+<div class="service-no">
+04
 </div>
 
 <h3>
@@ -1169,12 +1282,8 @@ FP2級 / 証券外務員二種
 
 <div class="service-card">
 
-<div class="service-icon">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="8"/>
-</svg>
-
+<div class="service-no">
+05
 </div>
 
 <h3>
@@ -1267,7 +1376,7 @@ Q.01 / 10
 
 <!-- FLOW -->
 
-<section>
+<section class="flow-section">
 
 <div class="container">
 
@@ -1281,7 +1390,7 @@ Q.01 / 10
 
 </div>
 
-<div class="flow-row">
+<div class="flow-grid">
 
 <div class="flow-card">
 
@@ -1289,13 +1398,7 @@ Q.01 / 10
 01
 </div>
 
-<div class="flow-circle">
-
-<svg viewBox="0 0 24 24">
-<path d="M5 5h14v14H5z"/>
-</svg>
-
-</div>
+<div class="flow-line"></div>
 
 <h3>
 相談予約
@@ -1314,13 +1417,7 @@ Q.01 / 10
 02
 </div>
 
-<div class="flow-circle">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="3"/>
-</svg>
-
-</div>
+<div class="flow-line"></div>
 
 <h3>
 ヒアリング
@@ -1339,13 +1436,7 @@ Q.01 / 10
 03
 </div>
 
-<div class="flow-circle">
-
-<svg viewBox="0 0 24 24">
-<path d="M4 18h16"/>
-</svg>
-
-</div>
+<div class="flow-line"></div>
 
 <h3>
 現状分析
@@ -1364,13 +1455,7 @@ Q.01 / 10
 04
 </div>
 
-<div class="flow-circle">
-
-<svg viewBox="0 0 24 24">
-<path d="M5 19h14"/>
-</svg>
-
-</div>
+<div class="flow-line"></div>
 
 <h3>
 プラン提案
@@ -1389,13 +1474,7 @@ Q.01 / 10
 05
 </div>
 
-<div class="flow-circle">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="8"/>
-</svg>
-
-</div>
+<div class="flow-line"></div>
 
 <h3>
 アフターフォロー
