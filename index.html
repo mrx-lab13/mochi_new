@@ -312,8 +312,8 @@ margin-bottom:26px;
 
 .hero h1{
 
-font-size:88px;
-line-height:1.12;
+font-size:clamp(52px,6.5vw,88px);
+line-height:1.18;
 
 font-weight:700;
 
@@ -584,18 +584,6 @@ color:#fff;
 font-weight:700;
 }
 
-.quiz-card{
-
-background:#fff;
-
-border-radius:34px;
-
-padding:44px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.18);
-}
-
 .quiz-top{
 
 display:flex;
@@ -658,9 +646,21 @@ grid-template-columns:
 gap:16px;
 }
 
+.quiz-card{
+
+background:#fff;
+
+border-radius:34px;
+
+padding:32px 36px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.18);
+}
+
 .answer-btn{
 
-height:72px;
+height:64px;
 
 border-radius:999px;
 
@@ -668,7 +668,11 @@ border:1px solid var(--line);
 
 background:#fff;
 
-font-size:16px;
+font-size:15px;
+
+font-family:
+-apple-system,BlinkMacSystemFont,
+"Helvetica Neue","Noto Sans JP",sans-serif;
 
 cursor:pointer;
 
