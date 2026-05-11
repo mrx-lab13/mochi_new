@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>望月勇気 | Financial Design</title>
 
 <style>
@@ -35,10 +35,11 @@ BlinkMacSystemFont,
 "Noto Sans JP",
 sans-serif;
 
-background:var(--bg);
+background:#fff;
 color:var(--text);
-line-height:1.8;
+
 overflow-x:hidden;
+line-height:1.8;
 }
 
 img{
@@ -52,31 +53,37 @@ color:inherit;
 }
 
 .container{
-width:min(1180px,92%);
+width:min(1280px,92%);
 margin:auto;
 }
 
 section{
-padding:110px 0;
+padding:120px 0;
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
+
 z-index:1000;
 
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(14px);
+background:
+rgba(255,255,255,.88);
 
-border-bottom:1px solid rgba(0,0,0,.05);
+backdrop-filter:blur(18px);
+
+border-bottom:
+1px solid rgba(15,23,42,.05);
 }
 
 .header-inner{
-height:82px;
+height:86px;
 
 display:flex;
 align-items:center;
@@ -92,175 +99,264 @@ color:var(--navy);
 
 nav ul{
 display:flex;
-gap:38px;
+gap:42px;
 list-style:none;
 }
 
 nav a{
-font-size:14px;
+font-size:13px;
+letter-spacing:.08em;
+color:var(--navy);
+
 transition:.3s;
 }
 
 nav a:hover{
-opacity:.6;
+opacity:.5;
 }
 
-/* HERO */
+.header-btn{
+padding:14px 24px;
+
+border-radius:999px;
+
+background:var(--gold);
+
+color:#fff;
+
+font-size:13px;
+font-weight:700;
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
-padding-top:180px;
-padding-bottom:120px;
+padding-top:140px;
+padding-bottom:90px;
 
 background:
 linear-gradient(
 135deg,
 #ffffff 0%,
-#eef2f7 100%
+#f8fafc 100%
 );
 }
 
 .hero-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:70px;
+grid-template-columns:42% 58%;
 align-items:center;
 }
 
+.hero-left{
+padding-right:60px;
+}
+
 .hero-sub{
-color:var(--gold);
-letter-spacing:.24em;
 font-size:13px;
-margin-bottom:20px;
+letter-spacing:.28em;
+color:var(--gold);
+
+margin-bottom:26px;
 }
 
 .hero h1{
+font-size:88px;
+line-height:1.18;
+font-weight:700;
+
+color:var(--navy);
+
+margin-bottom:36px;
+}
+
+.hero h1 span{
+color:var(--gold);
+}
+
+.hero-text{
+font-size:18px;
+line-height:2.1;
+
+color:var(--sub);
+
+margin-bottom:46px;
+}
+
+.hero-profile{
+margin-bottom:42px;
+}
+
+.hero-en{
+font-size:14px;
+
+letter-spacing:.38em;
+
+color:var(--gold);
+
+margin-bottom:16px;
+}
+
+.hero-name-row{
+display:flex;
+align-items:end;
+gap:28px;
+
+margin-bottom:18px;
+}
+
+.hero-name{
 font-size:68px;
-line-height:1.3;
-margin-bottom:28px;
+line-height:1;
+font-weight:700;
 color:var(--navy);
 }
 
-.hero p{
-font-size:18px;
+.hero-job{
+font-size:15px;
+line-height:1.9;
 color:var(--sub);
-line-height:2;
-margin-bottom:40px;
+padding-bottom:10px;
 }
 
 .hero-badges{
 display:flex;
-gap:12px;
+gap:14px;
 flex-wrap:wrap;
-margin-bottom:42px;
 }
 
 .hero-badge{
 padding:12px 18px;
+
 border-radius:999px;
-border:1px solid var(--line);
-background:#fff;
+
+border:1px solid rgba(198,169,106,.35);
+
 font-size:13px;
+
+color:var(--gold);
+
+background:
+rgba(198,169,106,.05);
 }
 
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-padding:18px 34px;
-
-border-radius:999px;
-
-background:var(--navy);
-color:#fff;
-
-font-weight:700;
-
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+.hero-image{
+position:relative;
 }
 
 .hero-image img{
-height:720px;
+height:860px;
+
 object-fit:cover;
 
-border-radius:30px;
+border-radius:36px;
 
 box-shadow:
-0 30px 80px rgba(15,23,42,.12);
+0 30px 80px rgba(15,23,42,.10);
 }
 
-/* TITLE */
+/* =========================
+SECTION HEAD
+========================= */
 
 .section-head{
 text-align:center;
-margin-bottom:64px;
+margin-bottom:74px;
 }
 
 .section-head span{
 display:block;
 
 font-size:13px;
-letter-spacing:.25em;
+letter-spacing:.28em;
 
 color:var(--gold);
 
-margin-bottom:10px;
+margin-bottom:14px;
 }
 
 .section-head h2{
-font-size:48px;
+font-size:58px;
 line-height:1.4;
+
+color:var(--navy);
 }
 
-/* SERVICE */
+/* =========================
+SERVICE
+========================= */
 
-.service-grid{
+.service-layout{
 display:grid;
-grid-template-columns:repeat(5,1fr);
+grid-template-columns:1.2fr 1fr 1fr;
+grid-template-rows:260px 260px;
 gap:22px;
 }
 
 .service-card{
+position:relative;
+
 background:#fff;
 
-border-radius:28px;
+border-radius:34px;
 
-padding:34px 26px;
+padding:38px;
 
-border:1px solid rgba(255,255,255,.8);
+border:1px solid rgba(15,23,42,.05);
+
+overflow:hidden;
+
+transition:.35s;
 
 box-shadow:
-0 10px 40px rgba(15,23,42,.05);
-
-transition:.3s;
+0 10px 40px rgba(15,23,42,.04);
 }
 
 .service-card:hover{
 transform:translateY(-8px);
 }
 
-.icon-wrap{
-width:68px;
-height:68px;
+.service-large{
+grid-row:1 / 3;
+}
+
+.service-card::after{
+content:"";
+
+position:absolute;
+right:-60px;
+bottom:-60px;
+
+width:180px;
+height:180px;
+
+background:
+radial-gradient(
+rgba(198,169,106,.10),
+transparent 70%
+);
+}
+
+.service-icon{
+width:72px;
+height:72px;
+
+border-radius:22px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-border-radius:20px;
-
 border:1px solid var(--line);
 
-margin-bottom:22px;
+margin-bottom:28px;
 }
 
-.icon{
-width:32px;
-height:32px;
+.service-icon svg{
+width:34px;
+height:34px;
 
 stroke:var(--gold);
 stroke-width:1.7;
@@ -268,228 +364,234 @@ fill:none;
 }
 
 .service-card h3{
-font-size:24px;
-margin-bottom:14px;
+font-size:34px;
+line-height:1.4;
+
+margin-bottom:18px;
+
+color:var(--navy);
 }
 
 .service-card p{
-font-size:15px;
-line-height:1.9;
+font-size:16px;
+line-height:2;
+
 color:var(--sub);
 }
 
-/* PROFILE */
+/* =========================
+CHECK
+========================= */
 
-.profile{
-background:#fff;
+.check{
+background:var(--navy);
+
+position:relative;
+
+overflow:hidden;
 }
 
-.profile-grid{
+.check::before{
+content:"check";
+
+position:absolute;
+right:80px;
+bottom:30px;
+
+font-size:120px;
+
+font-style:italic;
+
+color:rgba(255,255,255,.05);
+}
+
+.check-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:80px;
+grid-template-columns:38% 62%;
+gap:54px;
 align-items:center;
 }
 
-.profile-image img{
-height:680px;
-object-fit:cover;
-
-border-radius:30px;
-
-box-shadow:
-0 25px 70px rgba(15,23,42,.08);
+.check-left{
+color:#fff;
 }
 
-.profile-main-copy{
-font-size:58px;
+.check-left span{
+display:block;
+
+font-size:13px;
+letter-spacing:.28em;
+
+color:var(--gold);
+
+margin-bottom:16px;
+}
+
+.check-left h2{
+font-size:62px;
 line-height:1.35;
+
+margin-bottom:28px;
+}
+
+.check-left p{
+font-size:16px;
+line-height:2;
+
+color:rgba(255,255,255,.7);
+
+margin-bottom:40px;
+}
+
+.check-btn{
+display:inline-flex;
+
+padding:18px 34px;
+
+border-radius:999px;
+
+background:var(--gold);
+
+color:#fff;
+
+font-weight:700;
+}
+
+.quiz-card{
+background:#fff;
+
+border-radius:32px;
+
+padding:44px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.18);
+}
+
+.quiz-top{
+display:flex;
+align-items:center;
+gap:16px;
+
+margin-bottom:34px;
+}
+
+.quiz-no{
+font-size:15px;
+font-weight:700;
+color:var(--gold);
+}
+
+.progress{
+flex:1;
+height:6px;
+
+border-radius:999px;
+
+background:#e5e7eb;
+
+overflow:hidden;
+}
+
+.progress-bar{
+width:10%;
+height:100%;
+
+background:var(--gold);
+}
+
+.quiz-question{
+font-size:42px;
+line-height:1.5;
+
+font-weight:700;
 
 text-align:center;
 
 margin-bottom:42px;
 }
 
-.profile-name-wrap{
-text-align:center;
-margin-bottom:46px;
-}
-
-.profile-en{
-font-size:14px;
-letter-spacing:.45em;
-color:var(--gold);
-margin-bottom:14px;
-}
-
-.profile-name{
-font-size:64px;
-line-height:1.15;
-font-weight:700;
-margin-bottom:18px;
-}
-
-.profile-job{
-font-size:14px;
-letter-spacing:.18em;
-color:var(--sub);
-}
-
-.profile-description{
-margin-bottom:38px;
-}
-
-.profile-description p{
-font-size:17px;
-line-height:2.2;
-color:var(--sub);
-margin-bottom:24px;
-}
-
-/* DIAGNOSIS */
-
-.diagnosis{
-background:#f8fafc;
-}
-
-.diag-wrap{
-max-width:760px;
-margin:auto;
-
-background:#fff;
-
-border-radius:36px;
-
-padding:50px 40px;
-
-border:1px solid var(--line);
-
-box-shadow:
-0 20px 60px rgba(15,23,42,.06);
-}
-
-.progress{
-height:8px;
-background:#e5e7eb;
-border-radius:999px;
-overflow:hidden;
-margin-bottom:40px;
-}
-
-.progress-bar{
-height:100%;
-width:10%;
-background:var(--gold);
-transition:.35s;
-}
-
-.question-number{
-font-size:13px;
-letter-spacing:.25em;
-color:var(--gold);
-text-align:center;
-margin-bottom:18px;
-}
-
-.question-title{
-font-size:38px;
-line-height:1.5;
-font-weight:700;
-text-align:center;
-margin-bottom:40px;
-}
-
-.answer-list{
-display:flex;
-flex-direction:column;
-gap:14px;
+.answer-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
 }
 
 .answer-btn{
 padding:22px;
 
-border-radius:20px;
-
-background:#fff;
+border-radius:999px;
 
 border:1px solid var(--line);
+
+background:#fff;
 
 font-size:16px;
 
 cursor:pointer;
 
-transition:.25s;
+transition:.3s;
 }
 
 .answer-btn:hover{
-transform:translateY(-2px);
 border-color:var(--gold);
+transform:translateY(-2px);
 }
 
-.result{
-display:none;
-text-align:center;
-}
+/* =========================
+FLOW
+========================= */
 
-.result h3{
-font-size:46px;
-margin-bottom:18px;
-}
-
-.result p{
-font-size:18px;
-line-height:2;
-color:var(--sub);
-margin-bottom:30px;
-}
-
-.result-buttons{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.line-btn{
-background:#06C755;
-}
-
-.white-btn{
-background:#fff;
-color:var(--navy);
-border:1px solid var(--line);
-}
-
-/* FLOW */
-
-.flow-grid{
+.flow-row{
 display:grid;
 grid-template-columns:repeat(5,1fr);
-gap:22px;
+align-items:start;
+gap:20px;
 }
 
 .flow-card{
-background:#fff;
-
-border-radius:28px;
-
-padding:42px 24px;
-
-border:1px solid var(--line);
-
 text-align:center;
+position:relative;
+}
+
+.flow-card:not(:last-child)::after{
+content:"›";
+
+position:absolute;
+top:48px;
+right:-14px;
+
+font-size:40px;
+
+font-weight:300;
+
+color:#cbd5e1;
 }
 
 .flow-no{
-font-size:13px;
-letter-spacing:.25em;
-color:var(--gold);
-margin-bottom:22px;
+width:34px;
+height:34px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin:auto;
+margin-bottom:20px;
+
+font-size:12px;
+font-weight:700;
+
+color:#fff;
 }
 
 .flow-circle{
-width:92px;
-height:92px;
+width:110px;
+height:110px;
 
 border-radius:50%;
 
@@ -500,117 +602,172 @@ align-items:center;
 justify-content:center;
 
 margin:auto;
-margin-bottom:28px;
+margin-bottom:26px;
+}
+
+.flow-circle svg{
+width:38px;
+height:38px;
+
+stroke:var(--gold);
+stroke-width:1.7;
+fill:none;
 }
 
 .flow-card h3{
-font-size:26px;
-margin-bottom:18px;
+font-size:28px;
+
+margin-bottom:16px;
+
+color:var(--navy);
 }
 
 .flow-card p{
 font-size:15px;
 line-height:2;
+
 color:var(--sub);
 }
 
-/* RESULT */
+/* =========================
+RESULT
+========================= */
 
-.result-section{
+.result{
+padding:0;
+}
+
+.result-wrap{
 background:var(--navy);
-color:#fff;
-}
 
-.result-section .section-head h2{
-color:#fff;
-}
+padding:60px 80px;
 
-.result-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
+grid-template-columns:1.4fr repeat(4,1fr);
+
+align-items:center;
 }
 
-.result-card{
+.result-title span{
+display:block;
+
+font-size:13px;
+letter-spacing:.28em;
+
+color:var(--gold);
+
+margin-bottom:14px;
+}
+
+.result-title h2{
+font-size:54px;
+line-height:1.4;
+
+color:#fff;
+}
+
+.result-item{
 text-align:center;
+border-left:
+1px solid rgba(255,255,255,.1);
 }
 
-.result-card h3{
-font-size:60px;
-margin-bottom:10px;
+.result-item h3{
+font-size:82px;
+line-height:1;
+
+color:var(--gold);
+
+margin-bottom:14px;
 }
 
-.result-card p{
-color:rgba(255,255,255,.7);
+.result-item p{
+font-size:15px;
+
+color:rgba(255,255,255,.72);
 }
 
-/* SNS */
+/* =========================
+SNS
+========================= */
 
-.sns-grid{
+.sns-row{
 display:flex;
 justify-content:center;
-gap:24px;
+gap:26px;
 flex-wrap:wrap;
 }
 
-.image-btn{
-width:92px;
-height:92px;
+.sns-card{
+width:140px;
+height:140px;
 
-overflow:hidden;
+border-radius:30px;
 
-border-radius:26px;
+background:#fff;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 border:1px solid var(--line);
 
 box-shadow:
-0 10px 30px rgba(15,23,42,.05);
+0 10px 40px rgba(15,23,42,.04);
 
 transition:.3s;
 }
 
-.image-btn:hover{
-transform:translateY(-6px);
+.sns-card:hover{
+transform:translateY(-8px);
 }
 
-.image-btn img{
-width:100%;
-height:100%;
-object-fit:cover;
+.sns-card img{
+width:60px;
+height:60px;
+object-fit:contain;
 }
 
-/* CTA */
+/* =========================
+CTA
+========================= */
 
 .cta{
 background:
 linear-gradient(
 135deg,
-#0f172a 0%,
-#16243f 100%
+#091224 0%,
+#13203a 100%
 );
 
 color:#fff;
-text-align:center;
+}
+
+.cta-grid{
+display:grid;
+grid-template-columns:1fr auto;
+gap:80px;
+align-items:center;
 }
 
 .cta h2{
-font-size:56px;
-line-height:1.4;
-margin-bottom:24px;
+font-size:72px;
+line-height:1.35;
 }
 
-.cta p{
-font-size:16px;
+.cta-right p{
+font-size:17px;
 line-height:2;
-color:rgba(255,255,255,.75);
-margin-bottom:40px;
+
+color:rgba(255,255,255,.72);
+
+margin-bottom:34px;
 }
 
 .cta-buttons{
 display:flex;
-justify-content:center;
+flex-direction:column;
 gap:18px;
-flex-wrap:wrap;
 }
 
 .btn-gold{
@@ -622,30 +779,57 @@ background:#fff;
 color:var(--navy);
 }
 
-/* FOOTER */
+/* =========================
+FOOTER
+========================= */
 
 footer{
-background:#0a1120;
-color:rgba(255,255,255,.5);
-
-text-align:center;
+background:#050b15;
 
 padding:28px;
 
+text-align:center;
+
 font-size:13px;
+
+color:rgba(255,255,255,.45);
 }
 
-/* MOBILE */
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width:1100px){
 
-.service-grid,
-.flow-grid{
-grid-template-columns:repeat(2,1fr);
+.hero-grid,
+.check-grid,
+.cta-grid{
+grid-template-columns:1fr;
 }
 
-.result-grid{
-grid-template-columns:repeat(2,1fr);
+.hero-image img{
+height:auto;
+}
+
+.service-layout{
+grid-template-columns:1fr 1fr;
+}
+
+.service-large{
+grid-row:auto;
+}
+
+.result-wrap{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.flow-row{
+grid-template-columns:1fr 1fr;
+}
+
+.flow-card::after{
+display:none;
 }
 
 }
@@ -653,105 +837,129 @@ grid-template-columns:repeat(2,1fr);
 @media(max-width:768px){
 
 section{
-padding:70px 0;
+padding:80px 0;
 }
 
-nav{
+nav,
+.header-btn{
 display:none;
 }
 
+.header-inner{
+height:76px;
+}
+
 .hero{
-padding-top:130px;
+padding-top:120px;
 padding-bottom:70px;
 }
 
-.hero-grid,
-.profile-grid{
+.hero-grid{
+gap:50px;
+}
+
+.hero-left{
+padding-right:0;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.hero-text{
+font-size:16px;
+}
+
+.hero-name-row{
+display:block;
+}
+
+.hero-name{
+font-size:52px;
+margin-bottom:12px;
+}
+
+.hero-image img{
+border-radius:28px;
+}
+
+.section-head{
+margin-bottom:48px;
+}
+
+.section-head h2{
+font-size:38px;
+}
+
+.service-layout{
+grid-template-columns:1fr;
+grid-template-rows:auto;
+}
+
+.service-card{
+padding:34px 30px;
+}
+
+.check-grid{
+gap:40px;
+}
+
+.check-left h2{
+font-size:42px;
+}
+
+.quiz-card{
+padding:30px 22px;
+}
+
+.quiz-question{
+font-size:30px;
+}
+
+.answer-grid{
+grid-template-columns:1fr;
+}
+
+.flow-row{
 grid-template-columns:1fr;
 gap:40px;
 }
 
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:16px;
-line-height:1.9;
-}
-
-.hero-image img,
-.profile-image img{
-height:auto;
-}
-
-.section-head h2{
-font-size:34px;
-}
-
-.service-grid,
-.flow-grid,
-.result-grid{
+.result-wrap{
+padding:50px 30px;
 grid-template-columns:1fr;
-gap:18px;
 }
 
-.service-card,
-.flow-card{
-padding:34px 26px;
+.result-title h2{
+font-size:40px;
+margin-bottom:24px;
 }
 
-.service-card h3,
-.flow-card h3{
-font-size:30px;
+.result-item{
+border:none;
 }
 
-.service-card p,
-.flow-card p{
-font-size:17px;
+.result-item h3{
+font-size:64px;
 }
 
-.profile-main-copy{
-font-size:32px;
-line-height:1.45;
-margin-bottom:28px;
+.sns-card{
+width:96px;
+height:96px;
+border-radius:24px;
 }
 
-.profile-name{
-font-size:46px;
+.sns-card img{
+width:44px;
+height:44px;
 }
 
-.profile-description p{
-font-size:17px;
-line-height:2.1;
-}
-
-.diag-wrap{
-padding:36px 22px;
-border-radius:28px;
-}
-
-.question-title{
-font-size:30px;
-}
-
-.answer-btn{
-padding:18px;
-font-size:15px;
-}
-
-.result h3{
-font-size:34px;
+.cta-grid{
+gap:40px;
 }
 
 .cta h2{
-font-size:34px;
-}
-
-.image-btn{
-width:74px;
-height:74px;
-border-radius:22px;
+font-size:42px;
 }
 
 }
@@ -762,6 +970,7 @@ border-radius:22px;
 <body>
 
 <header>
+
 <div class="container header-inner">
 
 <div class="logo">
@@ -770,22 +979,29 @@ YUKI MOCHIZUKI
 
 <nav>
 <ul>
-<li><a href="#service">SERVICE</a></li>
-<li><a href="#profile">PROFILE</a></li>
-<li><a href="#diagnosis">CHECK</a></li>
-<li><a href="#flow">FLOW</a></li>
-<li><a href="#contact">CONTACT</a></li>
+<li><a href="#">SERVICE</a></li>
+<li><a href="#">CHECK</a></li>
+<li><a href="#">FLOW</a></li>
+<li><a href="#">RESULTS</a></li>
+<li><a href="#">CONTACT</a></li>
 </ul>
 </nav>
 
+<a href="#" class="header-btn">
+無料相談を予約する
+</a>
+
 </div>
+
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="container hero-grid">
 
-<div>
+<div class="hero-left">
 
 <div class="hero-sub">
 FINANCIAL DESIGN FOR LIFE
@@ -793,14 +1009,36 @@ FINANCIAL DESIGN FOR LIFE
 
 <h1>
 人生に、<br>
-「安心」と<br>
-「選択肢」を。
+<span>「安心」</span>と<br>
+<span>「選択肢」</span>を。
 </h1>
 
-<p>
+<p class="hero-text">
 保険・家計・資産形成を通して、<br>
-あなたとご家族の未来を共にデザインします。
+一人ひとりに合った選択を、<br>
+丁寧にサポートします。
 </p>
+
+<div class="hero-profile">
+
+<div class="hero-en">
+YUKI MOCHIZUKI
+</div>
+
+<div class="hero-name-row">
+
+<div class="hero-name">
+望月 勇気
+</div>
+
+<div class="hero-job">
+Financial Planner<br>
+FP2級 / 証券外務員二種
+</div>
+
+</div>
+
+</div>
 
 <div class="hero-badges">
 
@@ -814,97 +1052,140 @@ FINANCIAL DESIGN FOR LIFE
 
 </div>
 
-<a href="#" class="btn">
-無料相談を予約する
-</a>
-
 </div>
 
 <div class="hero-image">
-<img src="hero.jpg">
+<img src="hero.jpg" alt="">
 </div>
 
 </div>
 
 </section>
 
-<section id="service">
+<!-- SERVICE -->
+
+<section>
 
 <div class="container">
 
 <div class="section-head">
+
 <span>SERVICE</span>
-<h2>5つのサポート</h2>
+
+<h2>
+5つのサポート
+</h2>
+
 </div>
 
-<div class="service-grid">
+<div class="service-layout">
 
-<div class="service-card">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24" class="icon">
+<div class="service-card service-large">
+
+<div class="service-icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M3 10.5L12 3l9 7.5"/>
 <path d="M5 10v10h14V10"/>
 </svg>
+
 </div>
-<h3>家計設計</h3>
+
+<h3>
+家計設計
+</h3>
+
 <p>
 無理なく続く、<br>
-あなただけの家計設計
+あなただけの家計設計。
 </p>
+
 </div>
 
 <div class="service-card">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24" class="icon">
+
+<div class="service-icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/>
 </svg>
+
 </div>
-<h3>保険</h3>
+
+<h3>
+保険
+</h3>
+
 <p>
 必要な保障を、<br>
-必要な分だけ
+必要な分だけ。
 </p>
+
 </div>
 
 <div class="service-card">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24" class="icon">
+
+<div class="service-icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M4 19h16"/>
 <path d="M7 15l4-4 3 3 5-6"/>
 </svg>
+
 </div>
-<h3>資産形成</h3>
+
+<h3>
+資産形成
+</h3>
+
 <p>
 将来に向けた、<br>
-堅実な資産づくり
+堅実な資産づくり。
 </p>
+
 </div>
 
 <div class="service-card">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24" class="icon">
+
+<div class="service-icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M4 5h7v14H4z"/>
 <path d="M13 5h7v14h-7z"/>
 </svg>
+
 </div>
-<h3>教育費</h3>
+
+<h3>
+教育費
+</h3>
+
 <p>
 教育費を見据えた、<br>
-長期的なライフ設計
+長期的なライフ設計。
 </p>
+
 </div>
 
 <div class="service-card">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24" class="icon">
+
+<div class="service-icon">
+
+<svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="8"/>
 </svg>
+
 </div>
-<h3>選び方</h3>
+
+<h3>
+選び方
+</h3>
+
 <p>
 情報に流されない、<br>
-自分軸を育てる
+自分軸を育てる。
 </p>
+
 </div>
 
 </div>
@@ -913,116 +1194,68 @@ FINANCIAL DESIGN FOR LIFE
 
 </section>
 
-<section id="profile" class="profile">
+<!-- CHECK -->
 
-<div class="container profile-grid">
+<section class="check">
 
-<div class="profile-image">
-<img src="profile.jpg">
-</div>
+<div class="container check-grid">
 
-<div>
+<div class="check-left">
 
-<div class="hero-sub">
-PROFILE
-</div>
+<span>CHECK</span>
 
-<h2 class="profile-main-copy">
-人生設計から考える、<br>
-お金のサポート。
-</h2>
-
-<div class="profile-name-wrap">
-
-<div class="profile-en">
-YUKI MOCHIZUKI
-</div>
-
-<div class="profile-name">
-望月 勇気
-</div>
-
-<div class="profile-job">
-FINANCIAL PLANNER / FP2級 / 証券外務員二種
-</div>
-
-</div>
-
-<div class="profile-description">
-
-<p>
-お金の悩みは、<br>
-「商品」ではなく、<br>
-「人生設計」から考えるべき。
-</p>
-
-<p>
-保険・家計・資産形成を通して、<br>
-一人ひとりに合った選択を、<br>
-丁寧にサポートしています。
-</p>
-
-</div>
-
-<a href="#" class="btn">
-詳しく見る
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="diagnosis" class="diagnosis">
-
-<div class="container">
-
-<div class="section-head">
-<span>LIFE CHECK</span>
 <h2>
 3分でできる<br>
 家計バランス診断
 </h2>
+
+<p>
+10個の質問で、<br>
+今の家計バランスをチェック。<br>
+何から見直せば良いかが分かります。
+</p>
+
+<a href="#" class="check-btn">
+診断をはじめる
+</a>
+
 </div>
 
-<div class="diag-wrap">
+<div class="quiz-card">
+
+<div class="quiz-top">
+
+<div class="quiz-no">
+Q.01 / 10
+</div>
 
 <div class="progress">
-<div class="progress-bar" id="bar"></div>
+<div class="progress-bar"></div>
 </div>
 
-<div id="quiz">
-
-<div class="question-number" id="qNumber">
-QUESTION 1
 </div>
 
-<div class="question-title" id="qTitle">
+<div class="quiz-question">
 毎月の貯金は？
 </div>
 
-<div class="answer-list" id="answers"></div>
+<div class="answer-grid">
 
-</div>
+<button class="answer-btn">
+していない
+</button>
 
-<div class="result" id="diagResult">
+<button class="answer-btn">
+少ししている
+</button>
 
-<h3 id="resultTitle"></h3>
+<button class="answer-btn">
+ある程度できている
+</button>
 
-<p id="resultText"></p>
-
-<div class="result-buttons">
-
-<a href="https://lin.ee/QJrQskb" class="btn line-btn">
-LINEを追加する
-</a>
-
-<a href="#" class="btn white-btn" id="sendLine">
-結果をLINEで送る
-</a>
-
-</div>
+<button class="answer-btn">
+しっかりできている
+</button>
 
 </div>
 
@@ -1032,122 +1265,147 @@ LINEを追加する
 
 </section>
 
-<section id="flow">
+<!-- FLOW -->
+
+<section>
 
 <div class="container">
 
 <div class="section-head">
+
 <span>FLOW</span>
-<h2>ご相談の流れ</h2>
+
+<h2>
+ご相談の流れ
+</h2>
+
 </div>
 
-<div class="flow-grid">
+<div class="flow-row">
 
 <div class="flow-card">
-<div class="flow-no">01</div>
+
+<div class="flow-no">
+01
+</div>
+
 <div class="flow-circle">
-<svg viewBox="0 0 24 24" class="icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M5 5h14v14H5z"/>
 </svg>
+
 </div>
-<h3>相談予約</h3>
+
+<h3>
+相談予約
+</h3>
+
 <p>
 ご希望日時に合わせて、<br>
 ご予約いただきます。
 </p>
+
 </div>
 
 <div class="flow-card">
-<div class="flow-no">02</div>
+
+<div class="flow-no">
+02
+</div>
+
 <div class="flow-circle">
-<svg viewBox="0 0 24 24" class="icon">
+
+<svg viewBox="0 0 24 24">
 <circle cx="12" cy="8" r="3"/>
 </svg>
+
 </div>
-<h3>ヒアリング</h3>
+
+<h3>
+ヒアリング
+</h3>
+
 <p>
 現状やお悩みを、<br>
 丁寧に確認します。
 </p>
+
 </div>
 
 <div class="flow-card">
-<div class="flow-no">03</div>
+
+<div class="flow-no">
+03
+</div>
+
 <div class="flow-circle">
-<svg viewBox="0 0 24 24" class="icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M4 18h16"/>
 </svg>
+
 </div>
-<h3>現状分析</h3>
+
+<h3>
+現状分析
+</h3>
+
 <p>
 家計・保険・資産状況を、<br>
 多角的に分析します。
 </p>
+
 </div>
 
 <div class="flow-card">
-<div class="flow-no">04</div>
+
+<div class="flow-no">
+04
+</div>
+
 <div class="flow-circle">
-<svg viewBox="0 0 24 24" class="icon">
+
+<svg viewBox="0 0 24 24">
 <path d="M5 19h14"/>
 </svg>
+
 </div>
-<h3>プラン提案</h3>
+
+<h3>
+プラン提案
+</h3>
+
 <p>
 ライフスタイルに合った、<br>
 最適な設計をご提案します。
 </p>
+
 </div>
 
 <div class="flow-card">
-<div class="flow-no">05</div>
+
+<div class="flow-no">
+05
+</div>
+
 <div class="flow-circle">
-<svg viewBox="0 0 24 24" class="icon">
+
+<svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="8"/>
 </svg>
+
 </div>
-<h3>アフターフォロー</h3>
+
+<h3>
+アフターフォロー
+</h3>
+
 <p>
 ご相談後も継続的に、<br>
 サポートいたします。
 </p>
-</div>
 
-</div>
-
-</div>
-
-</section>
-
-<section class="result-section">
-
-<div class="container">
-
-<div class="section-head">
-<span>RESULT</span>
-<h2>数字で見る実績</h2>
-</div>
-
-<div class="result-grid">
-
-<div class="result-card">
-<h3>500+</h3>
-<p>相談実績</p>
-</div>
-
-<div class="result-card">
-<h3>300+</h3>
-<p>見直し実績</p>
-</div>
-
-<div class="result-card">
-<h3>98%</h3>
-<p>満足度</p>
-</div>
-
-<div class="result-card">
-<h3>98,000</h3>
-<p>平均削減額 / 年</p>
 </div>
 
 </div>
@@ -1156,30 +1414,105 @@ LINEを追加する
 
 </section>
 
-<section id="contact">
+<!-- RESULT -->
+
+<section class="result">
+
+<div class="result-wrap">
+
+<div class="result-title">
+
+<span>RESULTS</span>
+
+<h2>
+数字で見る実績
+</h2>
+
+</div>
+
+<div class="result-item">
+
+<h3>
+500+
+</h3>
+
+<p>
+相談実績
+</p>
+
+</div>
+
+<div class="result-item">
+
+<h3>
+300+
+</h3>
+
+<p>
+見直し実績
+</p>
+
+</div>
+
+<div class="result-item">
+
+<h3>
+98%
+</h3>
+
+<p>
+満足度
+</p>
+
+</div>
+
+<div class="result-item">
+
+<h3>
+98,000
+</h3>
+
+<p>
+平均削減額 / 年
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SNS -->
+
+<section>
 
 <div class="container">
 
 <div class="section-head">
+
 <span>CONTACT</span>
-<h2>SNS / お問い合わせ</h2>
+
+<h2>
+SNS / お問い合わせ
+</h2>
+
 </div>
 
-<div class="sns-grid">
+<div class="sns-row">
 
-<a href="#" class="image-btn">
+<a href="#" class="sns-card">
 <img src="instagram.jpg">
 </a>
 
-<a href="#" class="image-btn">
+<a href="#" class="sns-card">
 <img src="note.jpg">
 </a>
 
-<a href="#" class="image-btn">
+<a href="#" class="sns-card">
 <img src="line.jpg">
 </a>
 
-<a href="#" class="image-btn">
+<a href="#" class="sns-card">
 <img src="email.jpg">
 </a>
 
@@ -1189,14 +1522,18 @@ LINEを追加する
 
 </section>
 
+<!-- CTA -->
+
 <section class="cta">
 
-<div class="container">
+<div class="container cta-grid">
 
 <h2>
 今の状況を、<br>
 整理するところから。
 </h2>
+
+<div class="cta-right">
 
 <p>
 無理な営業は一切いたしません。<br>
@@ -1217,154 +1554,13 @@ LINEで相談する
 
 </div>
 
+</div>
+
 </section>
 
 <footer>
 © 2026 YUKI MOCHIZUKI
 </footer>
-
-<script>
-
-const questions = [
-
-{
-title:"毎月の貯金は？",
-answers:["していない","少ししている","ある程度できている","しっかりできている"]
-},
-
-{
-title:"固定費の見直しは？",
-answers:["していない","1年以上していない","最近見直した","定期的にしている"]
-},
-
-{
-title:"保険の内容を理解していますか？",
-answers:["全くわからない","なんとなく","だいたい理解","しっかり理解"]
-},
-
-{
-title:"資産運用はしていますか？",
-answers:["していない","検討中","少額でしている","継続的にしている"]
-},
-
-{
-title:"将来のお金に不安はありますか？",
-answers:["とても不安","少し不安","あまりない","ほぼない"]
-}
-
-];
-
-let current = 0;
-let total = 0;
-let log = [];
-
-const qTitle = document.getElementById("qTitle");
-const qNumber = document.getElementById("qNumber");
-const answers = document.getElementById("answers");
-const bar = document.getElementById("bar");
-
-function renderQuestion(){
-
-const q = questions[current];
-
-qTitle.innerHTML = q.title;
-
-qNumber.innerHTML = "QUESTION " + (current + 1);
-
-bar.style.width =
-((current + 1) / questions.length * 100) + "%";
-
-answers.innerHTML = "";
-
-q.answers.forEach((a,index)=>{
-
-const btn = document.createElement("button");
-
-btn.className = "answer-btn";
-
-btn.innerHTML = a;
-
-btn.onclick = ()=>selectAnswer(index + 1,a);
-
-answers.appendChild(btn);
-
-});
-
-}
-
-function selectAnswer(score,text){
-
-total += score;
-
-log.push(
-questions[current].title + "：" + text
-);
-
-current++;
-
-if(current < questions.length){
-
-renderQuestion();
-
-}else{
-
-showResult();
-
-}
-
-}
-
-function showResult(){
-
-document.getElementById("quiz").style.display = "none";
-
-document.getElementById("diagResult").style.display = "block";
-
-let title = "";
-let text = "";
-
-if(total <= 10){
-
-title = "要改善タイプ";
-
-text =
-"固定費・保険・支出管理を整理することで、家計の安定感を大きく改善できます。";
-
-}else if(total <= 16){
-
-title = "改善可能タイプ";
-
-text =
-"現在の家計は安定傾向ですが、見直しによってさらに最適化できる可能性があります。";
-
-}else{
-
-title = "安定タイプ";
-
-text =
-"非常に良好な状態です。今後は資産形成とライフプランの最適化が重要です。";
-
-}
-
-document.getElementById("resultTitle").innerHTML = title;
-
-document.getElementById("resultText").innerHTML = text;
-
-const lineMessage =
-"家計診断結果\n\n" +
-log.join("\n") +
-"\n\n診断結果：" + title +
-"\n" + text;
-
-document.getElementById("sendLine").href =
-"https://line.me/R/msg/text/?" +
-encodeURIComponent(lineMessage);
-
-}
-
-renderQuestion();
-
-</script>
 
 </body>
 </html>
