@@ -1,0 +1,1370 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>望月勇気 | Financial Design</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--navy:#0f172a;
+--gold:#c6a96a;
+--text:#1e293b;
+--sub:#64748b;
+--bg:#f8fafc;
+--line:#e2e8f0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Helvetica Neue",
+"Noto Sans JP",
+sans-serif;
+
+background:var(--bg);
+color:var(--text);
+line-height:1.8;
+overflow-x:hidden;
+}
+
+img{
+width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+section{
+padding:110px 0;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(14px);
+
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.header-inner{
+height:82px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+letter-spacing:.08em;
+color:var(--navy);
+}
+
+nav ul{
+display:flex;
+gap:38px;
+list-style:none;
+}
+
+nav a{
+font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:.6;
+}
+
+/* HERO */
+
+.hero{
+padding-top:180px;
+padding-bottom:120px;
+
+background:
+linear-gradient(
+135deg,
+#ffffff 0%,
+#eef2f7 100%
+);
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.hero-sub{
+color:var(--gold);
+letter-spacing:.24em;
+font-size:13px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:68px;
+line-height:1.3;
+margin-bottom:28px;
+color:var(--navy);
+}
+
+.hero p{
+font-size:18px;
+color:var(--sub);
+line-height:2;
+margin-bottom:40px;
+}
+
+.hero-badges{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:42px;
+}
+
+.hero-badge{
+padding:12px 18px;
+border-radius:999px;
+border:1px solid var(--line);
+background:#fff;
+font-size:13px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:18px 34px;
+
+border-radius:999px;
+
+background:var(--navy);
+color:#fff;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-image img{
+height:720px;
+object-fit:cover;
+
+border-radius:30px;
+
+box-shadow:
+0 30px 80px rgba(15,23,42,.12);
+}
+
+/* TITLE */
+
+.section-head{
+text-align:center;
+margin-bottom:64px;
+}
+
+.section-head span{
+display:block;
+
+font-size:13px;
+letter-spacing:.25em;
+
+color:var(--gold);
+
+margin-bottom:10px;
+}
+
+.section-head h2{
+font-size:48px;
+line-height:1.4;
+}
+
+/* SERVICE */
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:22px;
+}
+
+.service-card{
+background:#fff;
+
+border-radius:28px;
+
+padding:34px 26px;
+
+border:1px solid rgba(255,255,255,.8);
+
+box-shadow:
+0 10px 40px rgba(15,23,42,.05);
+
+transition:.3s;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+}
+
+.icon-wrap{
+width:68px;
+height:68px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:20px;
+
+border:1px solid var(--line);
+
+margin-bottom:22px;
+}
+
+.icon{
+width:32px;
+height:32px;
+
+stroke:var(--gold);
+stroke-width:1.7;
+fill:none;
+}
+
+.service-card h3{
+font-size:24px;
+margin-bottom:14px;
+}
+
+.service-card p{
+font-size:15px;
+line-height:1.9;
+color:var(--sub);
+}
+
+/* PROFILE */
+
+.profile{
+background:#fff;
+}
+
+.profile-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.profile-image img{
+height:680px;
+object-fit:cover;
+
+border-radius:30px;
+
+box-shadow:
+0 25px 70px rgba(15,23,42,.08);
+}
+
+.profile-main-copy{
+font-size:58px;
+line-height:1.35;
+
+text-align:center;
+
+margin-bottom:42px;
+}
+
+.profile-name-wrap{
+text-align:center;
+margin-bottom:46px;
+}
+
+.profile-en{
+font-size:14px;
+letter-spacing:.45em;
+color:var(--gold);
+margin-bottom:14px;
+}
+
+.profile-name{
+font-size:64px;
+line-height:1.15;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.profile-job{
+font-size:14px;
+letter-spacing:.18em;
+color:var(--sub);
+}
+
+.profile-description{
+margin-bottom:38px;
+}
+
+.profile-description p{
+font-size:17px;
+line-height:2.2;
+color:var(--sub);
+margin-bottom:24px;
+}
+
+/* DIAGNOSIS */
+
+.diagnosis{
+background:#f8fafc;
+}
+
+.diag-wrap{
+max-width:760px;
+margin:auto;
+
+background:#fff;
+
+border-radius:36px;
+
+padding:50px 40px;
+
+border:1px solid var(--line);
+
+box-shadow:
+0 20px 60px rgba(15,23,42,.06);
+}
+
+.progress{
+height:8px;
+background:#e5e7eb;
+border-radius:999px;
+overflow:hidden;
+margin-bottom:40px;
+}
+
+.progress-bar{
+height:100%;
+width:10%;
+background:var(--gold);
+transition:.35s;
+}
+
+.question-number{
+font-size:13px;
+letter-spacing:.25em;
+color:var(--gold);
+text-align:center;
+margin-bottom:18px;
+}
+
+.question-title{
+font-size:38px;
+line-height:1.5;
+font-weight:700;
+text-align:center;
+margin-bottom:40px;
+}
+
+.answer-list{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.answer-btn{
+padding:22px;
+
+border-radius:20px;
+
+background:#fff;
+
+border:1px solid var(--line);
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.25s;
+}
+
+.answer-btn:hover{
+transform:translateY(-2px);
+border-color:var(--gold);
+}
+
+.result{
+display:none;
+text-align:center;
+}
+
+.result h3{
+font-size:46px;
+margin-bottom:18px;
+}
+
+.result p{
+font-size:18px;
+line-height:2;
+color:var(--sub);
+margin-bottom:30px;
+}
+
+.result-buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.line-btn{
+background:#06C755;
+}
+
+.white-btn{
+background:#fff;
+color:var(--navy);
+border:1px solid var(--line);
+}
+
+/* FLOW */
+
+.flow-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:22px;
+}
+
+.flow-card{
+background:#fff;
+
+border-radius:28px;
+
+padding:42px 24px;
+
+border:1px solid var(--line);
+
+text-align:center;
+}
+
+.flow-no{
+font-size:13px;
+letter-spacing:.25em;
+color:var(--gold);
+margin-bottom:22px;
+}
+
+.flow-circle{
+width:92px;
+height:92px;
+
+border-radius:50%;
+
+border:1px solid var(--line);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin:auto;
+margin-bottom:28px;
+}
+
+.flow-card h3{
+font-size:26px;
+margin-bottom:18px;
+}
+
+.flow-card p{
+font-size:15px;
+line-height:2;
+color:var(--sub);
+}
+
+/* RESULT */
+
+.result-section{
+background:var(--navy);
+color:#fff;
+}
+
+.result-section .section-head h2{
+color:#fff;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.result-card{
+text-align:center;
+}
+
+.result-card h3{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.result-card p{
+color:rgba(255,255,255,.7);
+}
+
+/* SNS */
+
+.sns-grid{
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+}
+
+.image-btn{
+width:92px;
+height:92px;
+
+overflow:hidden;
+
+border-radius:26px;
+
+border:1px solid var(--line);
+
+box-shadow:
+0 10px 30px rgba(15,23,42,.05);
+
+transition:.3s;
+}
+
+.image-btn:hover{
+transform:translateY(-6px);
+}
+
+.image-btn img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* CTA */
+
+.cta{
+background:
+linear-gradient(
+135deg,
+#0f172a 0%,
+#16243f 100%
+);
+
+color:#fff;
+text-align:center;
+}
+
+.cta h2{
+font-size:56px;
+line-height:1.4;
+margin-bottom:24px;
+}
+
+.cta p{
+font-size:16px;
+line-height:2;
+color:rgba(255,255,255,.75);
+margin-bottom:40px;
+}
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn-gold{
+background:var(--gold);
+}
+
+.btn-white{
+background:#fff;
+color:var(--navy);
+}
+
+/* FOOTER */
+
+footer{
+background:#0a1120;
+color:rgba(255,255,255,.5);
+
+text-align:center;
+
+padding:28px;
+
+font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+.service-grid,
+.flow-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.result-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+padding:70px 0;
+}
+
+nav{
+display:none;
+}
+
+.hero{
+padding-top:130px;
+padding-bottom:70px;
+}
+
+.hero-grid,
+.profile-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.9;
+}
+
+.hero-image img,
+.profile-image img{
+height:auto;
+}
+
+.section-head h2{
+font-size:34px;
+}
+
+.service-grid,
+.flow-grid,
+.result-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.service-card,
+.flow-card{
+padding:34px 26px;
+}
+
+.service-card h3,
+.flow-card h3{
+font-size:30px;
+}
+
+.service-card p,
+.flow-card p{
+font-size:17px;
+}
+
+.profile-main-copy{
+font-size:32px;
+line-height:1.45;
+margin-bottom:28px;
+}
+
+.profile-name{
+font-size:46px;
+}
+
+.profile-description p{
+font-size:17px;
+line-height:2.1;
+}
+
+.diag-wrap{
+padding:36px 22px;
+border-radius:28px;
+}
+
+.question-title{
+font-size:30px;
+}
+
+.answer-btn{
+padding:18px;
+font-size:15px;
+}
+
+.result h3{
+font-size:34px;
+}
+
+.cta h2{
+font-size:34px;
+}
+
+.image-btn{
+width:74px;
+height:74px;
+border-radius:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<div class="logo">
+YUKI MOCHIZUKI
+</div>
+
+<nav>
+<ul>
+<li><a href="#service">SERVICE</a></li>
+<li><a href="#profile">PROFILE</a></li>
+<li><a href="#diagnosis">CHECK</a></li>
+<li><a href="#flow">FLOW</a></li>
+<li><a href="#contact">CONTACT</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="hero-sub">
+FINANCIAL DESIGN FOR LIFE
+</div>
+
+<h1>
+人生に、<br>
+「安心」と<br>
+「選択肢」を。
+</h1>
+
+<p>
+保険・家計・資産形成を通して、<br>
+あなたとご家族の未来を共にデザインします。
+</p>
+
+<div class="hero-badges">
+
+<div class="hero-badge">
+ファイナンシャルプランナー2級
+</div>
+
+<div class="hero-badge">
+証券外務員二種
+</div>
+
+</div>
+
+<a href="#" class="btn">
+無料相談を予約する
+</a>
+
+</div>
+
+<div class="hero-image">
+<img src="hero.jpg">
+</div>
+
+</div>
+
+</section>
+
+<section id="service">
+
+<div class="container">
+
+<div class="section-head">
+<span>SERVICE</span>
+<h2>5つのサポート</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M3 10.5L12 3l9 7.5"/>
+<path d="M5 10v10h14V10"/>
+</svg>
+</div>
+<h3>家計設計</h3>
+<p>
+無理なく続く、<br>
+あなただけの家計設計
+</p>
+</div>
+
+<div class="service-card">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/>
+</svg>
+</div>
+<h3>保険</h3>
+<p>
+必要な保障を、<br>
+必要な分だけ
+</p>
+</div>
+
+<div class="service-card">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M4 19h16"/>
+<path d="M7 15l4-4 3 3 5-6"/>
+</svg>
+</div>
+<h3>資産形成</h3>
+<p>
+将来に向けた、<br>
+堅実な資産づくり
+</p>
+</div>
+
+<div class="service-card">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M4 5h7v14H4z"/>
+<path d="M13 5h7v14h-7z"/>
+</svg>
+</div>
+<h3>教育費</h3>
+<p>
+教育費を見据えた、<br>
+長期的なライフ設計
+</p>
+</div>
+
+<div class="service-card">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24" class="icon">
+<circle cx="12" cy="12" r="8"/>
+</svg>
+</div>
+<h3>選び方</h3>
+<p>
+情報に流されない、<br>
+自分軸を育てる
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="profile" class="profile">
+
+<div class="container profile-grid">
+
+<div class="profile-image">
+<img src="profile.jpg">
+</div>
+
+<div>
+
+<div class="hero-sub">
+PROFILE
+</div>
+
+<h2 class="profile-main-copy">
+人生設計から考える、<br>
+お金のサポート。
+</h2>
+
+<div class="profile-name-wrap">
+
+<div class="profile-en">
+YUKI MOCHIZUKI
+</div>
+
+<div class="profile-name">
+望月 勇気
+</div>
+
+<div class="profile-job">
+FINANCIAL PLANNER / FP2級 / 証券外務員二種
+</div>
+
+</div>
+
+<div class="profile-description">
+
+<p>
+お金の悩みは、<br>
+「商品」ではなく、<br>
+「人生設計」から考えるべき。
+</p>
+
+<p>
+保険・家計・資産形成を通して、<br>
+一人ひとりに合った選択を、<br>
+丁寧にサポートしています。
+</p>
+
+</div>
+
+<a href="#" class="btn">
+詳しく見る
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="diagnosis" class="diagnosis">
+
+<div class="container">
+
+<div class="section-head">
+<span>LIFE CHECK</span>
+<h2>
+3分でできる<br>
+家計バランス診断
+</h2>
+</div>
+
+<div class="diag-wrap">
+
+<div class="progress">
+<div class="progress-bar" id="bar"></div>
+</div>
+
+<div id="quiz">
+
+<div class="question-number" id="qNumber">
+QUESTION 1
+</div>
+
+<div class="question-title" id="qTitle">
+毎月の貯金は？
+</div>
+
+<div class="answer-list" id="answers"></div>
+
+</div>
+
+<div class="result" id="diagResult">
+
+<h3 id="resultTitle"></h3>
+
+<p id="resultText"></p>
+
+<div class="result-buttons">
+
+<a href="https://lin.ee/QJrQskb" class="btn line-btn">
+LINEを追加する
+</a>
+
+<a href="#" class="btn white-btn" id="sendLine">
+結果をLINEで送る
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="flow">
+
+<div class="container">
+
+<div class="section-head">
+<span>FLOW</span>
+<h2>ご相談の流れ</h2>
+</div>
+
+<div class="flow-grid">
+
+<div class="flow-card">
+<div class="flow-no">01</div>
+<div class="flow-circle">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M5 5h14v14H5z"/>
+</svg>
+</div>
+<h3>相談予約</h3>
+<p>
+ご希望日時に合わせて、<br>
+ご予約いただきます。
+</p>
+</div>
+
+<div class="flow-card">
+<div class="flow-no">02</div>
+<div class="flow-circle">
+<svg viewBox="0 0 24 24" class="icon">
+<circle cx="12" cy="8" r="3"/>
+</svg>
+</div>
+<h3>ヒアリング</h3>
+<p>
+現状やお悩みを、<br>
+丁寧に確認します。
+</p>
+</div>
+
+<div class="flow-card">
+<div class="flow-no">03</div>
+<div class="flow-circle">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M4 18h16"/>
+</svg>
+</div>
+<h3>現状分析</h3>
+<p>
+家計・保険・資産状況を、<br>
+多角的に分析します。
+</p>
+</div>
+
+<div class="flow-card">
+<div class="flow-no">04</div>
+<div class="flow-circle">
+<svg viewBox="0 0 24 24" class="icon">
+<path d="M5 19h14"/>
+</svg>
+</div>
+<h3>プラン提案</h3>
+<p>
+ライフスタイルに合った、<br>
+最適な設計をご提案します。
+</p>
+</div>
+
+<div class="flow-card">
+<div class="flow-no">05</div>
+<div class="flow-circle">
+<svg viewBox="0 0 24 24" class="icon">
+<circle cx="12" cy="12" r="8"/>
+</svg>
+</div>
+<h3>アフターフォロー</h3>
+<p>
+ご相談後も継続的に、<br>
+サポートいたします。
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="result-section">
+
+<div class="container">
+
+<div class="section-head">
+<span>RESULT</span>
+<h2>数字で見る実績</h2>
+</div>
+
+<div class="result-grid">
+
+<div class="result-card">
+<h3>500+</h3>
+<p>相談実績</p>
+</div>
+
+<div class="result-card">
+<h3>300+</h3>
+<p>見直し実績</p>
+</div>
+
+<div class="result-card">
+<h3>98%</h3>
+<p>満足度</p>
+</div>
+
+<div class="result-card">
+<h3>98,000</h3>
+<p>平均削減額 / 年</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-head">
+<span>CONTACT</span>
+<h2>SNS / お問い合わせ</h2>
+</div>
+
+<div class="sns-grid">
+
+<a href="#" class="image-btn">
+<img src="instagram.jpg">
+</a>
+
+<a href="#" class="image-btn">
+<img src="note.jpg">
+</a>
+
+<a href="#" class="image-btn">
+<img src="line.jpg">
+</a>
+
+<a href="#" class="image-btn">
+<img src="email.jpg">
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+今の状況を、<br>
+整理するところから。
+</h2>
+
+<p>
+無理な営業は一切いたしません。<br>
+お気軽にご相談ください。
+</p>
+
+<div class="cta-buttons">
+
+<a href="#" class="btn btn-gold">
+LINEで相談する
+</a>
+
+<a href="#" class="btn btn-white">
+無料相談を予約する
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 YUKI MOCHIZUKI
+</footer>
+
+<script>
+
+const questions = [
+
+{
+title:"毎月の貯金は？",
+answers:["していない","少ししている","ある程度できている","しっかりできている"]
+},
+
+{
+title:"固定費の見直しは？",
+answers:["していない","1年以上していない","最近見直した","定期的にしている"]
+},
+
+{
+title:"保険の内容を理解していますか？",
+answers:["全くわからない","なんとなく","だいたい理解","しっかり理解"]
+},
+
+{
+title:"資産運用はしていますか？",
+answers:["していない","検討中","少額でしている","継続的にしている"]
+},
+
+{
+title:"将来のお金に不安はありますか？",
+answers:["とても不安","少し不安","あまりない","ほぼない"]
+}
+
+];
+
+let current = 0;
+let total = 0;
+let log = [];
+
+const qTitle = document.getElementById("qTitle");
+const qNumber = document.getElementById("qNumber");
+const answers = document.getElementById("answers");
+const bar = document.getElementById("bar");
+
+function renderQuestion(){
+
+const q = questions[current];
+
+qTitle.innerHTML = q.title;
+
+qNumber.innerHTML = "QUESTION " + (current + 1);
+
+bar.style.width =
+((current + 1) / questions.length * 100) + "%";
+
+answers.innerHTML = "";
+
+q.answers.forEach((a,index)=>{
+
+const btn = document.createElement("button");
+
+btn.className = "answer-btn";
+
+btn.innerHTML = a;
+
+btn.onclick = ()=>selectAnswer(index + 1,a);
+
+answers.appendChild(btn);
+
+});
+
+}
+
+function selectAnswer(score,text){
+
+total += score;
+
+log.push(
+questions[current].title + "：" + text
+);
+
+current++;
+
+if(current < questions.length){
+
+renderQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+document.getElementById("quiz").style.display = "none";
+
+document.getElementById("diagResult").style.display = "block";
+
+let title = "";
+let text = "";
+
+if(total <= 10){
+
+title = "要改善タイプ";
+
+text =
+"固定費・保険・支出管理を整理することで、家計の安定感を大きく改善できます。";
+
+}else if(total <= 16){
+
+title = "改善可能タイプ";
+
+text =
+"現在の家計は安定傾向ですが、見直しによってさらに最適化できる可能性があります。";
+
+}else{
+
+title = "安定タイプ";
+
+text =
+"非常に良好な状態です。今後は資産形成とライフプランの最適化が重要です。";
+
+}
+
+document.getElementById("resultTitle").innerHTML = title;
+
+document.getElementById("resultText").innerHTML = text;
+
+const lineMessage =
+"家計診断結果\n\n" +
+log.join("\n") +
+"\n\n診断結果：" + title +
+"\n" + text;
+
+document.getElementById("sendLine").href =
+"https://line.me/R/msg/text/?" +
+encodeURIComponent(lineMessage);
+
+}
+
+renderQuestion();
+
+</script>
+
+</body>
+</html>
