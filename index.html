@@ -289,15 +289,15 @@ linear-gradient(
 display:grid;
 
 grid-template-columns:
-42% 58%;
+48% 52%;
 
-gap:70px;
+gap:40px;
 
 align-items:center;
 }
 
 .hero-left{
-padding-right:20px;
+padding-right:0;
 }
 
 .hero-sub{
@@ -1406,7 +1406,7 @@ Financial Planner / FP2級 / 証券外務員二種<br>
 何から見直せば良いかが分かります。
 </p>
 
-<a href="#quiz-app" class="check-btn" onclick="setTimeout(startQuiz,300)">
+<a href="#quiz-app" class="check-btn" id="check-btn-start">
 診断をはじめる
 </a>
 
@@ -1499,6 +1499,9 @@ const questionEl = document.getElementById('quiz-question');
 const resultEl = document.getElementById('quiz-result');
 
 document.getElementById('start-btn').addEventListener('click', startQuiz);
+document.getElementById('check-btn-start').addEventListener('click', function(){
+  setTimeout(startQuiz, 350);
+});
 document.getElementById('retry-btn').addEventListener('click', () => {
   currentQ = 0; score = 0;
   resultEl.style.display = 'none';
